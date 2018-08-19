@@ -6,6 +6,31 @@
 		<!-- Image -->
 		<img :src="`images/${postContent.image}`"/>
 
+		<!-- Content -->
+		<div v-html="postContent.body"></div>
+
+		<div class="subtext">
+			<!-- Date -->
+			<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | date:'longDate'}}</a></span>
+
+			<!-- Sources -->
+			<div v-if="postContent.sources">
+				Sources:
+				<span v-for="source in postContent.sources">
+					<a :href="source.link" target="_blank">{{source.author}}</a><span v-if="!$last">, </span>
+				</span>
+			</div>
+
+			<!-- Tags -->
+			<span v-if="postContent.tags">
+				Tags:
+				<span v-for="tag in postContent.tags">
+					<a href>{{tag}}</a><span v-if="!$last">, </span>
+				</span>
+			</span>
+
+		</div>
+
   </div>
 </template>
 
@@ -74,5 +99,14 @@ $gray: #EEEEEE;
 $dark-blue: #003366;
 $nav-height: 60px;
 $footer-height: 60px;
+
+/*-----------------------------------------------------------------------------
+POST
+-----------------------------------------------------------------------------*/
+
+.subtext {
+  margin: 20px 0 80px 0;
+  font-style: italic;
+}
 
 </style>
