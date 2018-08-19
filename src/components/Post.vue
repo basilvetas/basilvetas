@@ -1,37 +1,39 @@
 <template>
-	<div v-if="ready">
-		<!-- Title -->
-		<a :href="`/post/${postContent.path}`"><h1>{{postContent.title}}</h1></a>
+	<b-container>
+		<div v-if="ready">
+			<!-- Title -->
+			<a :href="`/post/${postContent.path}`"><h1>{{postContent.title}}</h1></a>
 
-		<!-- Image -->
-		<img :src="`images/${postContent.image}`"/>
+			<!-- Image -->
+			<img :src="`images/${postContent.image}`"/>
 
-		<!-- Content -->
-		<div v-html="postContent.body"></div>
+			<!-- Content -->
+			<div v-html="postContent.body"></div>
 
-		<div class="subtext">
-			<!-- Date -->
-			<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | date:'longDate'}}</a></span>
+			<div class="subtext">
+				<!-- Date -->
+				<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | date:'longDate'}}</a></span>
 
-			<!-- Sources -->
-			<div v-if="postContent.sources">
-				Sources:
-				<span v-for="source in postContent.sources">
-					<a :href="source.link" target="_blank">{{source.author}}</a><span v-if="!$last">, </span>
+				<!-- Sources -->
+				<div v-if="postContent.sources">
+					Sources:
+					<span v-for="(source, index) in postContent.sources">
+						<a :href="source.link" target="_blank">{{source.author}}</a><span v-if="index != postContent.sources.length - 1">, </span>
+					</span>
+				</div>
+
+				<!-- Tags -->
+				<span v-if="postContent.tags">
+					Tags:
+					<span v-for="(tag, index) in postContent.tags">
+						<a href>{{tag}}</a><span v-if="index != postContent.tags.length - 1">, </span>
+					</span>
 				</span>
+
 			</div>
 
-			<!-- Tags -->
-			<span v-if="postContent.tags">
-				Tags:
-				<span v-for="tag in postContent.tags">
-					<a href>{{tag}}</a><span v-if="!$last">, </span>
-				</span>
-			</span>
-
-		</div>
-
-  </div>
+	  </div>
+	</b-container>
 </template>
 
 <script>
