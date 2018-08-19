@@ -1,8 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import postJson from '@/json/posts.json'
 
 Vue.use(Router)
+
+function getPostContent (route) {
+  return {
+    post: postJson.posts.filter(post => {
+      return post.path === route.params.postPath
+    })[0]
+  }
+}
 
 export default new Router({
   mode: 'history',
@@ -20,6 +29,12 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/post/:postPath',
+      name: 'post',
+      component: () => import('./components/Post.vue'),
+      props: getPostContent
     }
   ]
 })

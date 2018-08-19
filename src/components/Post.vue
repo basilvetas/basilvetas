@@ -12,12 +12,13 @@
 
 			<div class="subtext">
 				<!-- Date -->
-				<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | date:'longDate'}}</a></span>
+				<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date}}</a></span>
+				<!-- | formatDate -->
 
 				<!-- Sources -->
 				<div v-if="postContent.sources">
 					Sources:
-					<span v-for="(source, index) in postContent.sources">
+					<span v-for="(source, index) in postContent.sources" :key="index">
 						<a :href="source.link" target="_blank">{{source.author}}</a><span v-if="index != postContent.sources.length - 1">, </span>
 					</span>
 				</div>
@@ -25,14 +26,12 @@
 				<!-- Tags -->
 				<span v-if="postContent.tags">
 					Tags:
-					<span v-for="(tag, index) in postContent.tags">
+					<span v-for="(tag, index) in postContent.tags" :key="index">
 						<a href>{{tag}}</a><span v-if="index != postContent.tags.length - 1">, </span>
 					</span>
 				</span>
-
 			</div>
-
-	  </div>
+		</div>
 	</b-container>
 </template>
 
