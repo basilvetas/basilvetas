@@ -54,7 +54,7 @@ body {
 }
 
 img {
-  width: 500px;
+  width: 80%;
   margin: 10px 0;
 }
 

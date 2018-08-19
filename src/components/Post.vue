@@ -2,7 +2,7 @@
 	<b-container>
 		<div v-if="ready">
 			<!-- Title -->
-			<a :href="`/post/${postContent.path}`"><h1>{{postContent.title}}</h1></a>
+			<a :href="`/post/${postContent.path}`"><span v-html="postContent.title"></span></a>
 
 			<!-- Image -->
 			<img :src="`images/${postContent.image}`"/>
@@ -36,13 +36,7 @@
 </template>
 
 <script>
-import _ from 'lodash';
-
-function htmlDecode(text){
-	var el = document.createElement('div');
-	el.innerHTML = text;
-	return el.childNodes.length === 0 ? "" : el.childNodes[0].nodeValue;
-}
+import showdown from 'showdown';
 
 export default {
 	name: 'Post',
@@ -55,26 +49,16 @@ export default {
 	},
 	created: function() {
 		this.ready = false
-		this.$http.get(process.env.BASE_URL + 'posts/' + this.post.path + '.txt').then(response => { // success
-			var title = '';
-			var body = '';
-
-			// format post contents
-			_.each(response.body.split("\n\n"), function(snippet, index) {
-
-				snippet = snippet.trim();
-				if(index == 0) {
-					title = snippet;
-				}
-				else {
-					body += snippet;
-				}
-			});
+		this.$http.get(process.env.BASE_URL + 'posts/' + this.post.path + '.md').then(response => { // success
+			var converter = new showdown.Converter()
+			var snippets = response.body.split("\n\n")
+			var title = converter.makeHtml(snippets.shift())
+			var body = converter.makeHtml(snippets.join("\n\n"))
 
 			this.postContent = {
 				title: title,
 				date: this.post.date || null,
-				body: htmlDecode(body),
+				body: body,
 				path: this.post.path,
 				tags: this.post.tags,
 				image: this.post.image || null,
