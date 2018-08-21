@@ -41,7 +41,6 @@ html {
   min-height: 100%;
 }
 body {
-  font-size: 18px;
   word-wrap: break-word;
   margin-bottom: $footer-height; // uncomment if footer is included
 }
@@ -50,12 +49,14 @@ body {
   font-family: $font-stack;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-size: 1.2rem;
 }
 
 img {
-  width: 80%;
-  margin: 10px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
