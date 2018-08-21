@@ -16,7 +16,7 @@
 
 					<div class="subtext">
 						<!-- Date -->
-						<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date}}</a></span>
+						<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | moment("MMMM Do YYYY") }}</a></span>
 						<!-- | formatDate -->
 
 						<!-- Sources -->
