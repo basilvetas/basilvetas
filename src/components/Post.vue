@@ -9,7 +9,7 @@
 					<!-- Image -->
 					<img :src="`images/${postContent.image}`"/>
 
-					<!-- Content -->
+					<!-- Dynamic Content -->
 					<div>
 						<v-runtime-template :template="postContent.body"/>
 					</div>
@@ -64,12 +64,15 @@ export default {
 			var converter = new showdown.Converter()
 			var snippets = response.body.split("\n\n")
 			var title = converter.makeHtml(snippets.shift())
+
+			// <div> - runtime templates need to have a single root element for rendering
 			var body = "<div>" + converter.makeHtml(snippets.join("\n\n")) + "</div>"
+			body = body.replace(/<pre>/g, '<pre v-highlightjs>')
 
 			this.postContent = {
 				title: title,
 				date: this.post.date || null,
-				body: body.replace(/<pre>/g, '<pre v-highlightjs>'),
+				body: body,
 				path: this.post.path,
 				tags: this.post.tags,
 				image: this.post.image || null,

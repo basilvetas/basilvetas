@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import showdown from 'showdown'
-import hljs from 'highlight.js'
+import hljs from 'highlight.js';
 import VueResource from 'vue-resource'
 import VRuntimeTemplate from "v-runtime-template";
 import BootstrapVue from 'bootstrap-vue'
@@ -20,8 +20,12 @@ Vue.config.productionTip = false
 Vue.directive('highlightjs', {
 	deep: true,
 	bind: function (el) {
-		el.style.color = '#fff'
-		el.style.backgroundColor = 'LightSlateGray'
+		el.style.backgroundColor = '#d3d3d3'
+		el.style.padding = '10px'
+		el.style.border = '1px solid gray'
+		el.style.borderRadius = '10px'
+
+		// TODO: syntax highlighting isn't working
 		let targets = el.querySelectorAll('code')
 		targets.forEach((target) => {
 			console.log(target)
@@ -29,8 +33,12 @@ Vue.directive('highlightjs', {
 		})
 	},
 	componentUpdated: function (el) {
-		el.style.color = '#fff'
-		el.style.backgroundColor = 'LightSlateGray'
+		el.style.backgroundColor = '#d3d3d3'
+		el.style.padding = '10px'
+		el.style.border = '1px solid gray'
+		el.style.borderRadius = '10px'
+
+		// TODO: syntax highlighting isn't working
 		let targets = el.querySelectorAll('code')
 		targets.forEach((target) => {
 			console.log(target)

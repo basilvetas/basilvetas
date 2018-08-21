@@ -78,7 +78,6 @@ pre {
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
-  tab-size: 2;
 }
 
 </style>
