@@ -10,7 +10,9 @@
 					<img :src="`images/${postContent.image}`"/>
 
 					<!-- Content -->
-					<div v-html="postContent.body"></div>
+					<div>
+						<v-runtime-template :template="postContent.body"/>
+					</div>
 
 					<div class="subtext">
 						<!-- Date -->
@@ -40,6 +42,7 @@
 </template>
 
 <script>
+import VRuntimeTemplate from "v-runtime-template";
 import showdown from 'showdown';
 
 export default {
@@ -48,7 +51,11 @@ export default {
 	data: function() {
 		return {
 			ready: this.ready,
-			postContent: this.postContent
+			postContent: this.postContent,
+			// added to fix error: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties
+			prediction: '',
+			confidence: '',
+			url: '',
 		}
 	},
 	created: function() {
@@ -57,12 +64,12 @@ export default {
 			var converter = new showdown.Converter()
 			var snippets = response.body.split("\n\n")
 			var title = converter.makeHtml(snippets.shift())
-			var body = converter.makeHtml(snippets.join("\n\n"))
+			var body = "<div>" + converter.makeHtml(snippets.join("\n\n")) + "</div>"
 
 			this.postContent = {
 				title: title,
 				date: this.post.date || null,
-				body: body,
+				body: body.replace(/<pre>/g, '<pre v-highlightjs>'),
 				path: this.post.path,
 				tags: this.post.tags,
 				image: this.post.image || null,
@@ -74,9 +81,11 @@ export default {
 		}, err => { // error
 			console.log(err)
 		});
+	},
+	components: {
+		VRuntimeTemplate
 	}
-}
-
+};
 </script>
 
 <style scoped lang="scss">

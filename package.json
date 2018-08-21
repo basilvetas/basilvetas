@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
+    "highlight.js": "^9.12.0",
     "showdown": "^1.8.6",
+    "v-runtime-template": "^1.5.2",
     "vue": "^2.5.17",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1"
