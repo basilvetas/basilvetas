@@ -35,6 +35,11 @@
 							</span>
 						</span>
 					</div>
+
+					<div v-if="$route.name != 'home'">
+						<Disqus shortname="basilvetas" :identifier="postContent.path" :url="`https://basilvetas.com/post/${postContent.path}`"></Disqus>
+					</div>
+
 				</div>
 			</b-col>
 		</b-row>
@@ -43,6 +48,7 @@
 
 <script>
 import VRuntimeTemplate from "v-runtime-template";
+import Disqus from '@/components/Disqus.vue'
 import showdown from 'showdown';
 
 export default {
@@ -86,7 +92,8 @@ export default {
 		});
 	},
 	components: {
-		VRuntimeTemplate
+		VRuntimeTemplate,
+		Disqus
 	}
 };
 </script>

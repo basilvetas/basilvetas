@@ -8,11 +8,12 @@ import VRuntimeTemplate from "v-runtime-template";
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'highlight.js/styles/github.css'
 
 Vue.use(showdown)
 Vue.use(hljs)
-Vue.use(VRuntimeTemplate)
 Vue.use(VueResource)
+Vue.use(VRuntimeTemplate)
 Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
@@ -20,28 +21,14 @@ Vue.config.productionTip = false
 Vue.directive('highlightjs', {
 	deep: true,
 	bind: function (el) {
-		el.style.backgroundColor = '#d3d3d3'
-		el.style.padding = '10px'
-		el.style.border = '1px solid gray'
-		el.style.borderRadius = '10px'
-
-		// TODO: syntax highlighting isn't working
 		let targets = el.querySelectorAll('code')
 		targets.forEach((target) => {
-			console.log(target)
 			hljs.highlightBlock(target)
 		})
 	},
 	componentUpdated: function (el) {
-		el.style.backgroundColor = '#d3d3d3'
-		el.style.padding = '10px'
-		el.style.border = '1px solid gray'
-		el.style.borderRadius = '10px'
-
-		// TODO: syntax highlighting isn't working
 		let targets = el.querySelectorAll('code')
 		targets.forEach((target) => {
-			console.log(target)
 			hljs.highlightBlock(target)
 		})
 	}
