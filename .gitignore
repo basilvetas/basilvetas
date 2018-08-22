@@ -22,7 +22,6 @@ yarn-error.log*
 
 src/assets/*
 src/json/*
-public/posts/*
 public/images/*
 resources
 
