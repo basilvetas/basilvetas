@@ -2,14 +2,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import showdown from 'showdown'
-import hljs from 'highlight.js';
+import hljs from 'highlight.js'
+import firebase from 'firebase'
 import VueResource from 'vue-resource'
 import VueMoment from 'vue-moment'
-import VRuntimeTemplate from "v-runtime-template";
+import VRuntimeTemplate from "v-runtime-template"
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'highlight.js/styles/github.css'
+import fbConfig from '@/json/fb-config.json'
+// import gaConfig from '@/json/ga-config.json'
+
+firebase.initializeApp(fbConfig);
 
 Vue.use(showdown)
 Vue.use(hljs)

@@ -10,8 +10,6 @@
 // @ is an alias to /src
 import Nav from '@/components/Nav.vue'
 import Footer from '@/components/Footer.vue'
-// import gaConfig from '@/json/ga-config.json'
-// import fbConfig from '@/json/fb-config.json'
 
 export default {
   components: {

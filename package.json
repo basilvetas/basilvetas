@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
+    "firebase": "^5.4.0",
     "highlight.js": "^9.12.0",
     "showdown": "^1.8.6",
     "v-runtime-template": "^1.5.2",

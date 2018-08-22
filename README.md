@@ -25,6 +25,11 @@ yarn lint
 firebase init
 ```
 
+### Run locally with Firebase
+```
+firebase serve
+```
+
 ### Deploy /dist to Firebase
 ```
 firebase deploy
