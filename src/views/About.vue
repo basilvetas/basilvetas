@@ -1,5 +1,5 @@
 <template>
-	<b-container class="p-5">
+	<b-container class="pt-5 px-5">
 		<b-row class="px-5">
 			<b-col class="px-5">
 				<div v-if="ready">
@@ -60,5 +60,12 @@ $footer-height: 60px;
 /*-----------------------------------------------------------------------------
 ABOUT
 -----------------------------------------------------------------------------*/
+
+@media (max-width: 991px) {
+  .px-5 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
 
 </style>

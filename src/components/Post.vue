@@ -78,7 +78,11 @@ export default {
 			body = body.replace(/<pre>/g, '<pre v-highlightjs>')
 
 			// add bootstrap tags to tables for styling
-			body = body.replace(/<table>/g, '<table class="table table-sm table-striped table-bordered">')
+			body = body.replace(/<table>/g, '<table class="table table-sm table-striped table-bordered table-responsive-md">')
+
+			// note posts.md use ../ to display images in Github which is hacky but
+			// works since they are at top level. Might need to drop the ../ here in
+			// the future for production if this breaks later on
 
 			this.postContent = {
 				title: title,
@@ -120,6 +124,13 @@ POST
 .subtext {
   margin: 20px 0 80px 0;
   font-style: italic;
+}
+
+@media (max-width: 991px) {
+  .px-5 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 </style>

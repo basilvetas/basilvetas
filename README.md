@@ -5,17 +5,17 @@
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compile and hot-reload for development
 ```
 yarn serve
 ```
 
-### Compiles and minifies to /dist for production
+### Compile and minify to /dist for production
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Lint and fix files
 ```
 yarn lint
 ```
@@ -25,12 +25,12 @@ yarn lint
 firebase init
 ```
 
-### Run locally with Firebase
+### Test with Firebase locally pre-production
 ```
 firebase serve
 ```
 
-### Deploy /dist to Firebase
+### Deploy /dist to Firebase for production
 ```
 firebase deploy
 ```
