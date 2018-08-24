@@ -2,7 +2,7 @@
 	<nav>
 		<b-container>
 			<b-nav class="d-flex">
-        <a class="mr-auto p-2 brand" href="https://twitter.com/basilvetas" target="_blank">@basilvetas</a>
+        <a class="mr-auto p-2 brand" href="https://twitter.com/basilvetas">@basilvetas</a>
         <b-nav-item class="p-2"><router-link to="/">Home</router-link></b-nav-item>
         <b-nav-item class="p-2"><router-link to="/about">About</router-link></b-nav-item>
       </b-nav>
@@ -38,7 +38,7 @@ nav {
   a {
     font-weight: bold;
     color: $white;
-    font-size: 18px;
+    font-size: 1.2rem;
     &.router-link-exact-active {
       color: $gray;
     }
@@ -46,7 +46,17 @@ nav {
 
   a.brand {
     margin: 5px 10px;
-    font-size: 20px;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 767px) {
+    a {
+      font-size: 1rem;
+    }
+
+    a.brand {
+      font-size: 1.1rem;
+    }
   }
 }
 
