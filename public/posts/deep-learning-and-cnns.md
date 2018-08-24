@@ -24,7 +24,13 @@ Now to discuss some of the key differences between this Neural Network architect
 
 Likewise with the Perceptron, once the weights of a Neural Network are learned, we can predict values for future inputs by passing the **X** values as inputs to the Neural Network, which get computed through each layer until we get our final output value.  Notice that since we use a Sigmoid activation function, the output value is continuous.  In this case for classification problems we can just choose some threshold value above which we could assign a 1 and below which assign a 0 (for binary classification).  Lastly, I want to summarize the key parameters and hyperparameters required in a [Multilayer Perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) implementation, which further down will help reveal some of the key differences between this architecture and that of Convolutional Neural Networks.
 
-Parameters | Hyperparameters | Weights | Activation function | Bias | Learning rate | Error threshold | Nodes per layer | Loss function
+| Parameters | Hyperparameters |
+|:----------:|:---------------:|
+| Weights    | Activation function |
+| Bias       | Learning rate |
+|            | Error threshold |
+|            | Nodes per layer |
+|            | Loss function
 
 ### Convolutional Neural Networks
 
@@ -42,4 +48,10 @@ I mentioned briefly before that the filters are "predefined", which begs the que
 
 The final layer is the Fully-Connected layer, which functions exactly like the Multilayer Perceptron and allows us to convert a final input volume to class scores often using the softmax function. Otherwise, while the math is a bit more involved than with regular Neural Networks, CNNs are still trained using backpropogation based on computing the Error for some Loss Function and applying Gradient Descent to iteratively update the weight values of each filter until an error threshold is reached. For comparison, I again summarize the parameters and hyperparameters commonly used in the Convolutional Neural Network architecture to contrast against the general Multilayer Perceptrons.
 
-Parameters | Convolutional Hyperparameters | Pooling Hyperparameters | Fully-Connected/general Hyperparameters | Weights | Activation function | Pooling function | Learning rate | Bias | Filter size | Error threshold | Stride | Loss function | Number of filters | Zero Padding
+| Parameters | Convolutional Hyperparams | Pooling Hyperparams | Other Hyperparams |
+|:----------:|:-------------------------:|:-------------------:|:-----------------:|
+| Weights    | Activation function       | Pooling function    | Learning rate     |
+| Bias       | Filter size               | Error threshold     | Loss function     |
+|            | Number of filters         | | |
+|            | Zero Padding              | | |
+|            | Stride                    | | |

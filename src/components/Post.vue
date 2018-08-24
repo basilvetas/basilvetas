@@ -67,13 +67,18 @@ export default {
 	created: function() {
 		this.ready = false
 		this.$http.get(process.env.BASE_URL + 'posts/' + this.post.path + '.md').then(response => { // success
-			var converter = new showdown.Converter()
+			var converter = new showdown.Converter({tables: true})
 			var snippets = response.body.split("\n\n")
 			var title = converter.makeHtml(snippets.shift())
 
-			// <div> - runtime templates need to have a single root element for rendering
+			// runtime templates need to have a single root element for rendering
 			var body = "<div>" + converter.makeHtml(snippets.join("\n\n")) + "</div>"
+
+			// for syntax highlighting in code blocks
 			body = body.replace(/<pre>/g, '<pre v-highlightjs>')
+
+			// add bootstrap tags to tables for styling
+			body = body.replace(/<table>/g, '<table class="table table-sm table-striped table-bordered">')
 
 			this.postContent = {
 				title: title,
