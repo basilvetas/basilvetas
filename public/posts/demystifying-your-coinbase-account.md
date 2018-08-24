@@ -8,7 +8,7 @@ Maybe the biggest challenge initially for a new Coinbase user is making sense of
 
 So essentially each of your wallets (BTC, ETH, LTC) can have one or more associated addresses. Each time you receive digital currency, a new address is generated for that transaction and associated with the respective account. In Coinbase, you can view the addresses associated with each of your wallets under the Tools tab. If this is your first encounter with bitcoin addresses, for now just keep in mind that an address typically looks like: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
 
-![Crypto Wallets](images/wallets.png)
+![Crypto Wallets](../images/wallets.png)
 
 ### Bitcoin Transactions
 
@@ -24,7 +24,7 @@ Have a friend send some bitcoin to you via Coinbase and wait until you can see t
 
 The answer lies in how Coinbase stores your cryptocurrency behind the scenes, namely, they keep all your bitcoin, ether and litecoin in accounts that they control. They are essentially holding your cryptocurrency for you, and they have as much control over your cryptocurrency as a traditional custodian bank has over your money.  So, if your friend sends you bitcoin from another Coinbase account, then because Coinbase is also the custodian of your friend's bitcoin, then no bitcoin actually has to change hands. Coinbase just updates your respective balances in their internal database, like any other bank would do, and nothing gets recorded in the blockchain. These types of transactions are known as "off-chain" transactions. In this case, if you try to search your bitcoin address on a block explorer it will say zero transactions have taken place. Off-chain transactions are also why the blockchain could show a balance greater than what you have in your Coinbase account: if you've sent bitcoin to friends via off-chain transactions, but those bitcoin never actually left your bitcoin address. In practice, the way to make an off-chain transaction on Coinbase is to send bitcoin via the email address option rather than sending it directly to a bitcoin address.
 
-![Off Chain Transactions](images/off-chain-transactions.png)
+![Off Chain Transactions](../images/off-chain-transactions.png)
 
 ### On-Chain Transactions
 
@@ -32,7 +32,7 @@ The other possible scenario is if your friend sends you bitcoin from a non-Coinb
 
 In any case, once this happens, searching your bitcoin address in the block explorer will show two transactions: one from your friend's address to your address, and one from your address to Coinbase's address. These two transactions are normal "on-chain" transactions because they get recorded on the blockchain. Additionally, since Coinbase moves bitcoin around among addresses in this manner, when you send bitcoin to external addresses you'll notice that often your sender address is not actually associated with your account. This overall structure is reflected below for receiving bitcoin, but a similar process takes place for receiving ether or litecoin as well. Important to note, although certain bitcoin addresses are associated with your wallet, and other people's addresses with their wallets, behind the scenes all these addresses are equally controlled by Coinbase and the only balances that matter to them are their internal account balances, as opposed to transactions and balances displayed on the blockchain.
 
-![On Chain Transactions](images/on-chain-transactions.png)
+![On Chain Transactions](../images/on-chain-transactions.png)
 
 For Coinbase users, there are a few advantages as well as disadvantages to this structure. One advantage is that off-chain transactions have no fees, as opposed to on-chain transactions that carry a fee paid to bitcoin miners for validating new transaction blocks. More on fees [here](https://support.coinbase.com/customer/portal/articles/815435-does-coinbase-pay-bitcoin-miner-fees). Another advantage is that off-chain transactions are instantaneous because you don't need to wait for the transaction to be confirmed on the blockchain. However, the major disadvantage compared to other wallets is that as a Coinbase user you are sacrificing some of the decentralization, pseudonymity and control over your assets, which for many is the primary appeal of blockchain technology in the first place. Coinbase has the ability to freeze your assets, Coinbase can keep record of your transactions and Coinbase can be audited just like any other custodian bank.
 

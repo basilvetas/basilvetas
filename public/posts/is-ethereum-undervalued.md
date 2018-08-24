@@ -12,7 +12,7 @@ While I've abstracted away a lot of the critical assumptions, I essentially ende
 
 These results suggest that in both downside scenarios Ethereum is currently overvalued, however in the base cases slightly undervalued (but quite close to current price), and in the upside clearly undervalued. The key assumption in each of these valuation models was essentially one of scale-the downside, base and upside cases fluctuted based on how scalable I assumed the technology would be.
 
-![Ethereum Price](images/eth-price.png)
+![Ethereum Price](../images/eth-price.png)
 
 ### Scalability
 
