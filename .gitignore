@@ -22,7 +22,7 @@ yarn-error.log*
 
 src/assets/*
 src/json/*
-public/images/*
+public/images/headers/*
 resources
 
 # Firebase related

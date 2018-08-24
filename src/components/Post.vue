@@ -1,5 +1,5 @@
 <template>
-	<b-container class="p-5">
+	<b-container class="pt-5 px-5">
 		<b-row class="px-5">
 			<b-col class="px-5">
 				<div v-if="ready">
@@ -7,7 +7,7 @@
 					<a :href="`/post/${postContent.path}`"><span v-html="postContent.title"></span></a>
 
 					<!-- Image -->
-					<img :src="`images/${postContent.image}`"/>
+					<img :src="`images/headers/${postContent.image}`"/>
 
 					<!-- Dynamic Content -->
 					<div>
