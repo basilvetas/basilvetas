@@ -17,7 +17,6 @@
 					<div class="subtext">
 						<!-- Date -->
 						<span>Posted: <a :href="`/post/${postContent.path}`">{{postContent.date | moment("MMMM Do YYYY") }}</a></span>
-						<!-- | formatDate -->
 
 						<!-- Sources -->
 						<div v-if="postContent.sources">
@@ -78,7 +77,7 @@ export default {
 			body = body.replace(/<pre>/g, '<pre v-highlightjs>')
 
 			// add bootstrap tags to tables for styling
-			body = body.replace(/<table>/g, '<table class="table table-sm table-striped table-bordered table-responsive-md">')
+			body = body.replace(/<table>/g, '<table class="table table-responsive-md table-sm table-striped table-bordered">')
 
 			// note posts.md use ../ to display images in Github which is hacky but
 			// works since they are at top level. Might need to drop the ../ here in
