@@ -32,7 +32,7 @@ export default new Router({
     },
     {
       path: '/post/:postPath',
-      name: 'post',
+      name: ':postPath',
       component: () => import('./components/Post.vue'),
       props: getPostContent
     }

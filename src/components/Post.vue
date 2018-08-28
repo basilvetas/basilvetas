@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import VRuntimeTemplate from "v-runtime-template";
+import VRuntimeTemplate from "v-runtime-template"
 import Disqus from '@/components/Disqus.vue'
 import showdown from 'showdown';
 
