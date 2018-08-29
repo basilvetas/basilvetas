@@ -21,7 +21,7 @@ yarn-error.log*
 *.sw*
 
 src/assets/*
-src/json/*
+src/config/*
 public/images/headers/*
 resources
 

@@ -12,7 +12,7 @@
 // @ is an alias to /src
 import _ from 'lodash';
 import Post from '@/components/Post.vue'
-import postJson from '@/json/posts.json'
+import postJson from '@/posts.json'
 // import Twitter from '@/components/Twitter.vue'
 
 export default {

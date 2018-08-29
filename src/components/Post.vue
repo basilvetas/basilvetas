@@ -22,7 +22,7 @@
 						<div v-if="postContent.sources">
 							Sources:
 							<span v-for="(source, index) in postContent.sources" :key="index">
-								<a :href="source.link" target="_blank">{{source.author}}</a><span v-if="index != postContent.sources.length - 1">, </span>
+								<a :href="source.link" target="_blank">{{source.title}}</a><span v-if="index != postContent.sources.length - 1">, </span>
 							</span>
 						</div>
 

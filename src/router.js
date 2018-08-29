@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import postJson from '@/json/posts.json'
+import postJson from '@/posts.json'
 
 Vue.use(Router)
 

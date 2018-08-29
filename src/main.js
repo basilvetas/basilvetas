@@ -12,8 +12,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'highlight.js/styles/github.css'
-import fbConfig from '@/json/fb-config.json'
-import gaConfig from '@/json/ga-config.json'
+import fbConfig from '@/config/fb-config.json'
+import gaConfig from '@/config/ga-config.json'
 
 firebase.initializeApp(fbConfig);
 
